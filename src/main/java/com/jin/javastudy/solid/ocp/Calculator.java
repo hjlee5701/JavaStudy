@@ -1,28 +1,23 @@
 package com.jin.javastudy.solid.ocp;
 
+import com.jin.javastudy.solid.ocp.strategy.IncentiveStrategy;
+import lombok.RequiredArgsConstructor;
+
 import java.util.Comparator;
 import java.util.List;
 
+@RequiredArgsConstructor
 public class Calculator {
-    public void printEmployeeIncentive(boolean isJunior, boolean isSenior, List<Employee> employees) {
+    private final IncentiveStrategy incentiveStrategy;
+    public void printEmployeeIncen(List<Employee> employees) {
 
         employees.sort(Comparator.comparing(Employee::getName));
 
         double incentive;
         for (Employee employee : employees) {
-            if (employee.isLazy()) {
-                incentive = employee.getSalary() * 12 * 0.03;
-
-            } else if (isJunior) {
-                incentive = employee.getSalary() * 12 * 0.08;
-
-            } else if (isSenior) {
-                incentive = employee.getSalary() * 12 * 0.15;
-
-            } else {
-                incentive = employee.getSalary() * 12 * 0.05;
-            }
-            System.out.println(employee.getName() +"의 인센티브는 "+ incentive + "(원) 입니다.");
+            incentive = incentiveStrategy.calculateIncentive(employee);
+            System.out.println(employee.getName() +"의 인센티브는 "+ incentive + "(만원) 입니다.");
         }
+
     }
 }
