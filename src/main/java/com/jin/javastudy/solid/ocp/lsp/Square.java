@@ -1,16 +1,16 @@
 package com.jin.javastudy.solid.ocp.lsp;
 
-public class Square extends Rectangle {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public class Square implements Shape {
+
+    private int side;
 
     @Override
-    public void setWidth(int width) {
-        super.setWidth(width);
-        super.setHeight(width);
-    }
-
-    @Override
-    public void setHeight(int height) {
-        super.setWidth(height);
-        super.setHeight(height);
+    public int area() {
+        return side * side;
     }
 }

@@ -1,13 +1,15 @@
 package com.jin.javastudy.solid.ocp.lsp;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
-public class Rectangle {
+@AllArgsConstructor
+public class Rectangle implements Shape {
     private int width;
     private int height;
+
+    @Override
     public int area() {
         return width * height;
     }

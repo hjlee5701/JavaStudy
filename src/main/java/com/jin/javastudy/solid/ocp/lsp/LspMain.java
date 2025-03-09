@@ -3,15 +3,11 @@ package com.jin.javastudy.solid.ocp.lsp;
 public class LspMain {
     public static void main(String[] args) {
         System.out.println("\n==== 부모(Rectangle) 클래스 ====");
-        Rectangle rectangle = new Rectangle();
-        rectangle.setWidth(4);
-        rectangle.setHeight(5);
+        Shape rectangle = new Rectangle(4, 5);
         System.out.println("넓이 = " + rectangle.area());
 
         System.out.println("\n===== 자식(Square) 으로 대체 ====");
-        Rectangle square = new Square();
-        square.setWidth(4);
-        square.setHeight(5);
+        Shape square = new Square(4);
 
         System.out.println("넓이 = " + square.area());
 
