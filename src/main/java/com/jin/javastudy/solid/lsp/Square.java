@@ -1,4 +1,4 @@
-package com.jin.javastudy.solid.ocp.lsp;
+package com.jin.javastudy.solid.lsp;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

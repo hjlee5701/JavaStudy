@@ -1,4 +1,4 @@
-package com.jin.javastudy.solid.ocp.lsp;
+package com.jin.javastudy.solid.lsp;
 
 public class LspMain {
     public static void main(String[] args) {
